@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+te#!/usr/bin/python3
 
 # Accessing the Twitter API
 # This script describes the basic methodology for accessing a Twitter feed
@@ -64,3 +64,5 @@ while True:
 
 ## CAUTION: For the rest of this assignment, the list "tweets" contains all the
 ## tweets you would want to work with. Do NOT change the list or the value of "tweets".
+
+text_list = [text ['full_text'] for text in tweets]
