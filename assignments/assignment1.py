@@ -79,6 +79,7 @@ def get_full_text(tweet):
 
 text_list_full = [get_full_text(tweet) for tweet in tweets]
 
+#Return a list of hashtags from a given tweet
 def hashtagParser(tweet):
   counter = len(tweet['entities']['hashtags'])
   hashtags = []
@@ -90,3 +91,15 @@ def hashtagParser(tweet):
   return hashtags;
 
 tags_per_tweet = [hashtagParser(tweet) for tweet in tweets]
+
+#Create a hashtags dictionary counting the number of repeated hashtags in the given tweets
+hashtags = {}
+for tags in tags_per_tweet:
+  for hashtag in tags:
+    if hashtag in hashtags:
+      hashtags[hashtag]+=1
+    else:
+      hashtags[hashtag] = 1
+
+
+
