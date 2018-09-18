@@ -108,3 +108,9 @@ top_six_hashtags = []
 for i in range (0,6):
   top_six_hashtags.append(sorted_hashtags[i])
 
+#Find the tweets with no hashtags
+def no_hashtags(tweet):
+  if len(tweet['entities']['hashtags']) == 0:
+    return tweet;
+
+no_hash = [no_hashtags(tweet) for tweet in tweets]
