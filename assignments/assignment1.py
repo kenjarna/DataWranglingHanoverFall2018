@@ -78,3 +78,15 @@ def get_full_text(tweet):
     return tweet['full_text'];
 
 text_list_full = [get_full_text(tweet) for tweet in tweets]
+
+def hashtagParser(tweet):
+  counter = len(tweet['entities']['hashtags'])
+  hashtags = []
+  while counter > 0:
+    i = 0
+    hashtags.append(tweet['entities']['hashtags'][i]['text'])
+    i+=1
+    counter-=1
+  return hashtags;
+
+tags_per_tweet = [hashtagParser(tweet) for tweet in tweets]
