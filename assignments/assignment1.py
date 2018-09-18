@@ -9,6 +9,7 @@
 from requests_oauthlib import OAuth2Session
 from oauthlib.oauth2 import BackendApplicationClient
 import json
+import operator
 
 # In order to use this script, you must:
 # - Have a Twitter account and create an app
@@ -101,5 +102,9 @@ for tags in tags_per_tweet:
     else:
       hashtags[hashtag] = 1
 
-
+sorted_hashtags = sorted(hashtags.items(), key=operator.itemgetter(1), reverse=True)
+#Grab the top six hashtags from the given tweets
+top_six_hashtags = []
+for i in range (0,6):
+  top_six_hashtags.append(sorted_hashtags[i])
 
