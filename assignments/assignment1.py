@@ -1,4 +1,5 @@
-te#!/usr/bin/python3
+#!/usr/bin/python3
+# Kenny Jarnagin, Hanover College Fall 2018
 
 # Accessing the Twitter API
 # This script describes the basic methodology for accessing a Twitter feed
@@ -65,4 +66,15 @@ while True:
 ## CAUTION: For the rest of this assignment, the list "tweets" contains all the
 ## tweets you would want to work with. Do NOT change the list or the value of "tweets".
 
-text_list = [text ['full_text'] for text in tweets]
+text_list = [text['full_text'] for text in tweets]
+
+
+#if the provided tweet was retweeted, get the full text of that retweet
+#otherwise, just return the full text of the given tweet
+def get_full_text(tweet):
+  if "retweeted_status" in tweet:
+    return tweet['retweeted_status']['full_text'];
+  else:
+    return tweet['full_text'];
+
+text_list_full = [get_full_text(tweet) for tweet in tweets]
