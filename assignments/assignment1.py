@@ -129,9 +129,10 @@ for tag in hashtags:
     if tag in hashtagParser(tweet):
       if tweet['user']['screen_name'] not in empty_dict['users']:
         empty_dict['users'].append(tweet['user']['screen_name'])
-    for item in hashtagParser(tweet):
-      if item not in tag:
-        empty_dict['other_tags'].append(item)
+      for item in hashtagParser(tweet):
+        if item != tag:
+          if item not in empty_dict['other_tags']:
+            empty_dict['other_tags'].append(item)
 
 #Get rid of duplicate tags in the tag_info 
 for tag in tag_info:
@@ -141,3 +142,15 @@ for tag in tag_info:
 with open('tag_info.json', 'w') as outfile:
  json.dump(tag_info, outfile)
 
+#List with one entry per tweet in which each entry would be a
+#dictionary 
+#[{"text": ... , "author": ... , "date": ... , "hashtags": ... , "mentions": ...},]
+list_of_tweets = []
+for tweet in tweets:
+  empty_dict={}
+  empty_dict['text'] = getFullText(tweet)
+  empty_dict['author'] = tweet['user']['screen_name']
+  empty_dict['date'] = tweet['created_at']
+  empty_dict['hashtags'] = tweet['entities']['hashtags']
+  list_of_tweets.append(empty_dict)
+ 
