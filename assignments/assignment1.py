@@ -137,3 +137,7 @@ for tag in hashtags:
 for tag in tag_info:
   tag_info[tag]['other_tags'] = set(tag_info[tag]['other_tags'])
   tag_info[tag]['other_tags'] = list(tag_info[tag]['other_tags'])
+
+with open('tag_info.json', 'w') as outfile:
+ json.dump(tag_info, outfile)
+
