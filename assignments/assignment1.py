@@ -114,3 +114,9 @@ def no_hashtags(tweet):
     return tweet;
 
 no_hash = [no_hashtags(tweet) for tweet in tweets]
+
+#Produce a dictionary with one key for each hashtag
+tag_info = {}
+for tag in hashtags:
+  tag_info[tag] = {'count': hashtags[tag]}
+  
