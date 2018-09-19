@@ -116,6 +116,7 @@ def no_hashtags(tweet):
 no_hash = [no_hashtags(tweet) for tweet in tweets]
 
 #Produce a dictionary with one key for each hashtag
+#tag_info = { 'hashtag': {'count': ... , 'percent': ... , 'users': ... , 'other_tags': ... }}
 tag_info = {}
 for tag in hashtags:
   empty_dict={}
@@ -123,8 +124,16 @@ for tag in hashtags:
   empty_dict['count'] = hashtags[tag]
   empty_dict['percent'] = "{0:.5f}%".format(tag_info[tag]['count']/len(tweets)*100)
   empty_dict['users'] = []
+  empty_dict['other_tags'] = []
   for tweet in tweets:
     if tag in hashtagParser(tweet):
       if tweet['user']['screen_name'] not in empty_dict['users']:
         empty_dict['users'].append(tweet['user']['screen_name'])
-  
+    for item in hashtagParser(tweet):
+      if item not in tag:
+        empty_dict['other_tags'].append(item)
+
+#Get rid of duplicate tags in the tag_info 
+for tag in tag_info:
+  tag_info[tag]['other_tags'] = set(tag_info[tag]['other_tags'])
+  tag_info[tag]['other_tags'] = list(tag_info[tag]['other_tags'])
