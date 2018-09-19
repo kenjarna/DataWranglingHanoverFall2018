@@ -118,23 +118,13 @@ no_hash = [no_hashtags(tweet) for tweet in tweets]
 #Produce a dictionary with one key for each hashtag
 tag_info = {}
 for tag in hashtags:
-  if tag in tag_info:
-    tag_info[tag]['count'] = hashtags[tag] 
-  else:
-    tag_info[tag] = {'count': hashtags[tag]}
-
-#Add a field to tag_info that determines the percent 
-#of tweets that contain a specific hashtag 
-for tag in tag_info:
-   tag_info[tag]['percent'] = "{0:.5f}%".format(tag_info[tag]['count']/len(tweets)*100)
-
-#Add a key 'users' to tag_info that contains a list of handles of users who tweeted the tweets
-#with the given hashtag. If this returns an empty list for a given tweet, that means
-#there were no hashtags associated with that tweet.
-for tweet in tweets:
-  if len(tweet['entities']['hashtags']) > 0:
-    for tags in tags_per_tweet:
-      for tag in tags:
-        if tag in tag_info:
-          tag_info[tag]['users'] = []
-
+  empty_dict={}
+  tag_info[tag] = empty_dict
+  empty_dict['count'] = hashtags[tag]
+  empty_dict['percent'] = "{0:.5f}%".format(tag_info[tag]['count']/len(tweets)*100)
+  empty_dict['users'] = []
+  for tweet in tweets:
+    if tag in hashtagParser(tweet):
+      if tweet['user']['screen_name'] not in empty_dict['users']:
+        empty_dict['users'].append(tweet['user']['screen_name'])
+  
