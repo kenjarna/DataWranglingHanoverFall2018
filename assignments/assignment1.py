@@ -127,3 +127,14 @@ for tag in hashtags:
 #of tweets that contain a specific hashtag 
 for tag in tag_info:
    tag_info[tag]['percent'] = "{0:.5f}%".format(tag_info[tag]['count']/len(tweets)*100)
+
+#Add a key 'users' to tag_info that contains a list of handles of users who tweeted the tweets
+#with the given hashtag. If this returns an empty list for a given tweet, that means
+#there were no hashtags associated with that tweet.
+for tweet in tweets:
+  if len(tweet['entities']['hashtags']) > 0:
+    for tags in tags_per_tweet:
+      for tag in tags:
+        if tag in tag_info:
+          tag_info[tag]['users'] = []
+
