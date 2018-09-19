@@ -72,20 +72,20 @@ text_list = [text['full_text'] for text in tweets]
 
 #if the provided tweet was retweeted, get the full text of that retweet
 #otherwise, just return the full text of the given tweet
-def get_full_text(tweet):
+def getFullText(tweet):
   if "retweeted_status" in tweet:
     return tweet['retweeted_status']['full_text'];
   else:
     return tweet['full_text'];
 
-text_list_full = [get_full_text(tweet) for tweet in tweets]
+text_list_full = [getFullText(tweet) for tweet in tweets]
 
 #Return a list of hashtags from a given tweet
 def hashtagParser(tweet):
   counter = len(tweet['entities']['hashtags'])
   hashtags = []
+  i = 0
   while counter > 0:
-    i = 0
     hashtags.append(tweet['entities']['hashtags'][i]['text'])
     i+=1
     counter-=1
