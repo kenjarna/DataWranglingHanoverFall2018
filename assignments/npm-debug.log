@@ -1,0 +1,161 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install', '-g', 'oauthlib' ]
+2 info using npm@3.10.10
+3 info using node@v6.14.4
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readGlobalPackageData
+7 silly fetchPackageMetaData oauthlib
+8 silly fetchNamedPackageData oauthlib
+9 silly mapToRegistry name oauthlib
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry data Result {
+12 silly mapToRegistry   raw: 'oauthlib',
+12 silly mapToRegistry   scope: null,
+12 silly mapToRegistry   escapedName: 'oauthlib',
+12 silly mapToRegistry   name: 'oauthlib',
+12 silly mapToRegistry   rawSpec: '',
+12 silly mapToRegistry   spec: 'latest',
+12 silly mapToRegistry   type: 'tag' }
+13 silly mapToRegistry uri https://registry.npmjs.org/oauthlib
+14 verbose request uri https://registry.npmjs.org/oauthlib
+15 verbose request no auth needed
+16 info attempt registry request try #1 at 10:42:27 AM
+17 verbose request id 8502a43f3dc3fc5c
+18 http request GET https://registry.npmjs.org/oauthlib
+19 http 200 https://registry.npmjs.org/oauthlib
+20 verbose headers { date: 'Wed, 19 Sep 2018 14:42:27 GMT',
+20 verbose headers   'content-type': 'application/json; charset=UTF-8',
+20 verbose headers   'transfer-encoding': 'chunked',
+20 verbose headers   connection: 'keep-alive',
+20 verbose headers   'set-cookie': [ '__cfduid=d016ac189e39c5b27dc9d2af401441b2c1537368147; expires=Thu, 19-Sep-19 14:42:27 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+20 verbose headers   'cf-cache-status': 'MISS',
+20 verbose headers   'cache-control': 'max-age=300',
+20 verbose headers   'cf-ray': '45ccd1aa3d44a609-IND',
+20 verbose headers   etag: 'W/"aea818119ed51ad8d50b4d86b2dd73c9"',
+20 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+20 verbose headers   'last-modified': 'Sun, 27 May 2018 10:56:52 GMT',
+20 verbose headers   vary: 'accept-encoding, accept',
+20 verbose headers   server: 'cloudflare',
+20 verbose headers   'content-encoding': 'gzip' }
+21 silly get cb [ 200,
+21 silly get   { date: 'Wed, 19 Sep 2018 14:42:27 GMT',
+21 silly get     'content-type': 'application/json; charset=UTF-8',
+21 silly get     'transfer-encoding': 'chunked',
+21 silly get     connection: 'keep-alive',
+21 silly get     'set-cookie': [ '__cfduid=d016ac189e39c5b27dc9d2af401441b2c1537368147; expires=Thu, 19-Sep-19 14:42:27 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+21 silly get     'cf-cache-status': 'MISS',
+21 silly get     'cache-control': 'max-age=300',
+21 silly get     'cf-ray': '45ccd1aa3d44a609-IND',
+21 silly get     etag: 'W/"aea818119ed51ad8d50b4d86b2dd73c9"',
+21 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+21 silly get     'last-modified': 'Sun, 27 May 2018 10:56:52 GMT',
+21 silly get     vary: 'accept-encoding, accept',
+21 silly get     server: 'cloudflare',
+21 silly get     'content-encoding': 'gzip' } ]
+22 verbose get saving oauthlib to /home/jarnagink19/.npm/registry.npmjs.org/oauthlib/.cache.json
+23 verbose correctMkdir /home/jarnagink19/.npm correctMkdir not in flight; initializing
+24 silly install normalizeTree
+25 silly loadCurrentTree Finishing
+26 silly loadIdealTree Starting
+27 silly install loadIdealTree
+28 silly cloneCurrentTree Starting
+29 silly install cloneCurrentTreeToIdealTree
+30 silly cloneCurrentTree Finishing
+31 silly loadShrinkwrap Starting
+32 silly install loadShrinkwrap
+33 silly loadShrinkwrap Finishing
+34 silly loadAllDepsIntoIdealTree Starting
+35 silly install loadAllDepsIntoIdealTree
+36 silly resolveWithNewModule oauthlib@0.0.1 checking installable status
+37 silly cache add args [ 'oauthlib', null ]
+38 verbose cache add spec oauthlib
+39 silly cache add parsed spec Result {
+39 silly cache add   raw: 'oauthlib',
+39 silly cache add   scope: null,
+39 silly cache add   escapedName: 'oauthlib',
+39 silly cache add   name: 'oauthlib',
+39 silly cache add   rawSpec: '',
+39 silly cache add   spec: 'latest',
+39 silly cache add   type: 'tag' }
+40 silly addNamed oauthlib@latest
+41 verbose addNamed "latest" is being treated as a dist-tag for oauthlib
+42 info addNameTag [ 'oauthlib', 'latest' ]
+43 silly mapToRegistry name oauthlib
+44 silly mapToRegistry using default registry
+45 silly mapToRegistry registry https://registry.npmjs.org/
+46 silly mapToRegistry data Result {
+46 silly mapToRegistry   raw: 'oauthlib',
+46 silly mapToRegistry   scope: null,
+46 silly mapToRegistry   escapedName: 'oauthlib',
+46 silly mapToRegistry   name: 'oauthlib',
+46 silly mapToRegistry   rawSpec: '',
+46 silly mapToRegistry   spec: 'latest',
+46 silly mapToRegistry   type: 'tag' }
+47 silly mapToRegistry uri https://registry.npmjs.org/oauthlib
+48 verbose addNameTag registry:https://registry.npmjs.org/oauthlib not in flight; fetching
+49 verbose get https://registry.npmjs.org/oauthlib not expired, no request
+50 silly addNameTag next cb for oauthlib with tag latest
+51 silly addNamed oauthlib@0.0.1
+52 verbose addNamed "0.0.1" is a plain semver version for oauthlib
+53 silly mapToRegistry name oauthlib
+54 silly mapToRegistry using default registry
+55 silly mapToRegistry registry https://registry.npmjs.org/
+56 silly mapToRegistry data Result {
+56 silly mapToRegistry   raw: 'oauthlib',
+56 silly mapToRegistry   scope: null,
+56 silly mapToRegistry   escapedName: 'oauthlib',
+56 silly mapToRegistry   name: 'oauthlib',
+56 silly mapToRegistry   rawSpec: '',
+56 silly mapToRegistry   spec: 'latest',
+56 silly mapToRegistry   type: 'tag' }
+57 silly mapToRegistry uri https://registry.npmjs.org/oauthlib
+58 verbose addRemoteTarball https://registry.npmjs.org/oauthlib/-/oauthlib-0.0.1.tgz not in flight; adding
+59 verbose addRemoteTarball [ 'https://registry.npmjs.org/oauthlib/-/oauthlib-0.0.1.tgz',
+59 verbose addRemoteTarball   '6231348376d0d62c59e76b7e97cb243123b3a5c9' ]
+60 info retry fetch attempt 1 at 10:42:27 AM
+61 info attempt registry request try #1 at 10:42:27 AM
+62 http fetch GET https://registry.npmjs.org/oauthlib/-/oauthlib-0.0.1.tgz
+63 http fetch 200 https://registry.npmjs.org/oauthlib/-/oauthlib-0.0.1.tgz
+64 silly fetchAndShaCheck shasum 6231348376d0d62c59e76b7e97cb243123b3a5c9
+65 verbose addTmpTarball /tmp/npm-4518-635e94f6/registry.npmjs.org/oauthlib/-/oauthlib-0.0.1.tgz not in flight; adding
+66 verbose addTmpTarball already have metadata; skipping unpack for oauthlib@0.0.1
+67 verbose correctMkdir /home/jarnagink19/.npm correctMkdir not in flight; initializing
+68 silly cache afterAdd oauthlib@0.0.1
+69 verbose afterAdd /home/jarnagink19/.npm/oauthlib/0.0.1/package/package.json not in flight; writing
+70 verbose correctMkdir /home/jarnagink19/.npm correctMkdir not in flight; initializing
+71 verbose afterAdd /home/jarnagink19/.npm/oauthlib/0.0.1/package/package.json written
+72 silly loadAllDepsIntoIdealTree Finishing
+73 silly loadIdealTree Finishing
+74 silly currentTree lib
+75 silly idealTree lib
+75 silly idealTree └── oauthlib@0.0.1
+76 silly generateActionsToTake Starting
+77 silly install generateActionsToTake
+78 warn checkPermissions Missing write access to /usr/lib/node_modules
+79 silly rollbackFailedOptional Starting
+80 silly rollbackFailedOptional Finishing
+81 silly runTopLevelLifecycles Finishing
+82 silly install printInstalled
+83 verbose stack Error: EACCES: permission denied, access '/usr/lib/node_modules'
+83 verbose stack     at Error (native)
+84 verbose cwd /home/jarnagink19/Desktop/Data Wrangling/DataWranglingHanoverFall2018/assignments
+85 error Linux 4.15.0-34-generic
+86 error argv "/usr/bin/node" "/usr/bin/npm" "install" "-g" "oauthlib"
+87 error node v6.14.4
+88 error npm  v3.10.10
+89 error path /usr/lib/node_modules
+90 error code EACCES
+91 error errno -13
+92 error syscall access
+93 error Error: EACCES: permission denied, access '/usr/lib/node_modules'
+93 error     at Error (native)
+93 error  { Error: EACCES: permission denied, access '/usr/lib/node_modules'
+93 error     at Error (native)
+93 error   errno: -13,
+93 error   code: 'EACCES',
+93 error   syscall: 'access',
+93 error   path: '/usr/lib/node_modules' }
+94 error Please try running this command again as root/Administrator.
+95 verbose exit [ -13, true ]
