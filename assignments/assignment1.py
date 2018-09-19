@@ -118,5 +118,12 @@ no_hash = [no_hashtags(tweet) for tweet in tweets]
 #Produce a dictionary with one key for each hashtag
 tag_info = {}
 for tag in hashtags:
-  tag_info[tag] = {'count': hashtags[tag]}
-  
+  if tag in tag_info:
+    tag_info[tag]['count'] = hashtags[tag] 
+  else:
+    tag_info[tag] = {'count': hashtags[tag]}
+
+#Add a field to tag_info that determines the percent 
+#of tweets that contain a specific hashtag 
+for tag in tag_info:
+   tag_info[tag]['percent'] = "{0:.5f}%".format(tag_info[tag]['count']/len(tweets)*100)
