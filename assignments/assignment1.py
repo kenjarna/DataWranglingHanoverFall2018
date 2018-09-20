@@ -147,10 +147,23 @@ with open('tag_info.json', 'w') as outfile:
 #[{"text": ... , "author": ... , "date": ... , "hashtags": ... , "mentions": ...},]
 list_of_tweets = []
 for tweet in tweets:
-  empty_dict={}
-  empty_dict['text'] = getFullText(tweet)
-  empty_dict['author'] = tweet['user']['screen_name']
-  empty_dict['date'] = tweet['created_at']
-  empty_dict['hashtags'] = tweet['entities']['hashtags']
-  list_of_tweets.append(empty_dict)
+  emptyDict = {}
+  list_of_tweets.append(emptyDict)
+  emptyDict['text'] = getFullText(tweet)
+  emptyDict['author'] = tweet['user']['screen_name']
+  emptyDict['date'] = tweet['created_at']
+  if "retweeted_status" in tweet:
+    emptyDict['hashtags'] = hashtagParser(tweet['retweeted_status'])
+  else:
+    emptyDict['hashtags'] = hashtagParser(tweet)
+  i = 0
+  emptyDict['mentions'] = []
+  while i < len(tweet['entities']['user_mentions']):
+    emptyDict['mentions'].append(tweet['entities']['user_mentions'][i]['screen_name'])
+    i += 1
+
+
+##Send to JSON
+with open('simpler_tweets.json', 'w') as outfile:
+  json.dump(list_of_tweets, outfile)
  
