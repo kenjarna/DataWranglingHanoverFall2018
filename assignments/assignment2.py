@@ -15,20 +15,22 @@ r.headers               # A dictionary of the provided headers
 
 #Objective 1
 reply = requests.get("http://127.0.0.1:5000/user")
-userDict = reply.json()
-userString = userDict['users'][0]['link']
-fullAddress = "http://127.0.0.1:5000" + userString
-user_name = requests.get(fullAddress)
+userDict = reply.json() #Change the list recieved into a dictionary
+userString = userDict['users'][0]['link'] #Drill into the user
+fullAddress = "http://127.0.0.1:5000" + userString #get the user-specific address
+user_name = requests.get(fullAddress) #Request the user information
 
 #Objective 2
-names = {"first" : "Benedict", "last" : "Cumberbatch"} 
-new_user = requests.post("http://127.0.0.1:5000/user",json=names)
-newUserLocation = new_user.headers['Location']
+names = {"first" : "Benedict", "last" : "Cumberbatch"} #New user's first and last name
+new_user = requests.post("http://127.0.0.1:5000/user",json=names) #Send the information created above to the server
+newUserLocation = new_user.headers['Location'] #Get the http adress of the user
+
 
 #Objective 3
-# message = {"message": "The Imitation Game", "recipient": address + "user/" + random_user}
-# answer = requests.post(newUserLocation + "/message", json = message)
-# print(answer)
+message = {"text": "The Imitation Game", "recipient": fullAddress} #Create the dictionary that contains the message
+answer = requests.post(newUserLocation + "/message", json=message ) #Send the information to the server
+updated= requests.get(newUserLocation+"/message")
+print(updated.text)
 
 
 
