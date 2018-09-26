@@ -19,3 +19,9 @@ random_user = user_name.text[27:32]
 address = "http://127.0.0.1:5000/"
 user_name = requests.get(address + "user/" + random_user)
 print(user_name.text)
+
+#Objective 2
+names = {"first" : "Benedict", "last" : "Cumberbatch"} 
+new_user = requests.post("http://127.0.0.1:5000/user",json=names)
+newUserLocation = new_user.headers['Location']
+
